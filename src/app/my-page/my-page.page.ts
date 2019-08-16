@@ -22,7 +22,6 @@ export class MyPagePage implements OnInit {
   }
 
   async takePicture() {
-    console.log('take picture');
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: false,
@@ -35,7 +34,6 @@ export class MyPagePage implements OnInit {
     // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
     // Can be set to the src of an image now
     this.imageUrl = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));;
-    console.log(this.imageUrl);
   }
 
 }
